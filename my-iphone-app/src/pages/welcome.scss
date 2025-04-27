@@ -26,7 +26,7 @@
     .preferences-button {
         background-color: #e67e22;
         color: white;
-        padding: 0.75rem 0.75rem;
+        padding: 0.75rem 1.5rem;
         border: none;
         border-radius: 10px;
         font-size: 1rem;
@@ -36,18 +36,18 @@
         align-items: center;
         position: relative;
         overflow: hidden;
-        transition: all 0.3s ease;
+        transition: background-color 0.3s ease;
 
         .arrow {
-            margin-left: 0.3rem;
+            margin-left: 0.5rem;
             opacity: 0;
-            transform: translateX(-10px);
+            transform: translateX(-8px);
             transition: all 0.3s ease;
             white-space: nowrap;
         }
 
         &:hover {
-            transform: translateX(-5px);
+            background-color: #cf711c;
         }
 
         &:hover .arrow {

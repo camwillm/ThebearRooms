@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import TopNav from "../components/TopNav";
 import "./Profile.scss";
 
 const Profile = () => {
+    const navigate = useNavigate();
     const [profileData, setProfileData] = useState({
         major: "",
         preference: "",
@@ -11,22 +14,33 @@ const Profile = () => {
         description: "",
         interests: [] as string[],
     });
+    const [fullName, setFullName] = useState("");
 
     useEffect(() => {
-        const storedData = localStorage.getItem("profileData");
-        if (storedData) {
-            setProfileData(JSON.parse(storedData));
+        const storedProfileData = localStorage.getItem("profileData");
+        if (storedProfileData) {
+            setProfileData(JSON.parse(storedProfileData));
+        }
+
+        const storedLoginData = localStorage.getItem("loginData");
+        if (storedLoginData) {
+            const parsedLoginData = JSON.parse(storedLoginData);
+            const firstName = parsedLoginData.firstName || "";
+            const lastName = parsedLoginData.lastName || "";
+            setFullName(`${firstName} ${lastName}`.trim());
         }
     }, []);
 
+    const handleEditClick = () => {
+        navigate("/preferences");
+    };
+
     return (
         <div className="profile-wrapper">
+            <TopNav />
             <div className="profile-header">
-                <h2>{profileData.major || "My Profile"}</h2>
-                <div className="profile-pic">
-                    {/* Placeholder circle */}
-                    <span>👤</span>
-                </div>
+                <h2>{fullName || "My Profile"}</h2>
+                <div className="profile-pic">👤</div>
             </div>
 
             <div className="profile-info">
@@ -61,7 +75,7 @@ const Profile = () => {
             </div>
 
             <div className="edit-button">
-                <button>Edit Profile</button>
+                <button onClick={handleEditClick}>Edit Profile</button>
             </div>
         </div>
     );

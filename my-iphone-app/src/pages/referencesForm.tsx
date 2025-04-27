@@ -61,7 +61,7 @@ const PreferencesForm = () => {
             </div>
 
             <div className="form-group">
-                <label>Closer or farther roommate?</label>
+                <label>Closer or farther to school?</label>
                 <input type="text" value={distancePreference} onChange={(e) => setDistancePreference(e.target.value)} placeholder="e.g., Closer" />
             </div>
 

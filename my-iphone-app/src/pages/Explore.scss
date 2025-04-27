@@ -1,0 +1,45 @@
+.explore-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: #f0f2f5;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.explore-header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    color: #1e3a8a;
+    text-align: center;
+}
+
+.explore-sections {
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.explore-section {
+    background: white;
+    color: #1e3a8a;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #1e3a8a;
+        color: white;
+        transform: translateY(-3px);
+    }
+}
