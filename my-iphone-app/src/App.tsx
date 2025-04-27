@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Welcome from './pages/welcome';
 import PreferencesForm from './pages/referencesForm';
+import Profile from './pages/profile';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/preferences" element={<PreferencesForm />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </ScreenWrapper>
   );

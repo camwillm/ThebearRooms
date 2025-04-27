@@ -1,17 +1,39 @@
-import "./referencesForm.scss";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import './referencesForm.scss';
 
 const interestsList = ["Football", "Anime", "Cooking", "Fashion", "Fitness", "Photography"];
 
 const PreferencesForm = () => {
+    const navigate = useNavigate();
+
+    const [major, setMajor] = useState("");
+    const [preference, setPreference] = useState("");
+    const [classification, setClassification] = useState("");
+    const [homeState, setHomeState] = useState("");
+    const [distancePreference, setDistancePreference] = useState("");
+    const [description, setDescription] = useState("");
     const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
 
     const toggleInterest = (interest: string) => {
-        setSelectedInterests(prev =>
-            prev.includes(interest)
-                ? prev.filter(i => i !== interest)
-                : [...prev, interest]
+        setSelectedInterests((prev) =>
+            prev.includes(interest) ? prev.filter((i) => i !== interest) : [...prev, interest]
         );
+    };
+
+    const handleSubmit = () => {
+        const profileData = {
+            major,
+            preference,
+            classification,
+            homeState,
+            distancePreference,
+            description,
+            interests: selectedInterests, // ✅ corrected this field
+        };
+
+        localStorage.setItem("profileData", JSON.stringify(profileData));
+        navigate("/profile"); // ✅ go to Profile page after submit
     };
 
     return (
@@ -20,27 +42,27 @@ const PreferencesForm = () => {
 
             <div className="form-group">
                 <label>What is your major?</label>
-                <input type="text" placeholder="e.g., Accounting" />
+                <input type="text" value={major} onChange={(e) => setMajor(e.target.value)} placeholder="e.g., Accounting" />
             </div>
 
             <div className="form-group">
                 <label>Morning person or night owl?</label>
-                <input type="text" placeholder="e.g., Morning Person" />
+                <input type="text" value={preference} onChange={(e) => setPreference(e.target.value)} placeholder="e.g., Morning Person" />
             </div>
 
             <div className="form-group">
                 <label>Classification?</label>
-                <input type="text" placeholder="e.g., Freshman" />
+                <input type="text" value={classification} onChange={(e) => setClassification(e.target.value)} placeholder="e.g., Freshman" />
             </div>
 
             <div className="form-group">
                 <label>Home State?</label>
-                <input type="text" placeholder="e.g., Maryland" />
+                <input type="text" value={homeState} onChange={(e) => setHomeState(e.target.value)} placeholder="e.g., Maryland" />
             </div>
 
             <div className="form-group">
                 <label>Closer or farther roommate?</label>
-                <input type="text" placeholder="e.g., Closer" />
+                <input type="text" value={distancePreference} onChange={(e) => setDistancePreference(e.target.value)} placeholder="e.g., Closer" />
             </div>
 
             <div className="form-group">
@@ -61,10 +83,10 @@ const PreferencesForm = () => {
 
             <div className="form-group">
                 <label>Description / Hobbies</label>
-                <textarea placeholder="Tell us about yourself..." />
+                <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Tell us about yourself..." />
             </div>
 
-            <button className="submit-btn">Submit</button>
+            <button className="submit-btn" onClick={handleSubmit}>Submit</button>
         </div>
     );
 };
