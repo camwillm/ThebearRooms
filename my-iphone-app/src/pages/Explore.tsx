@@ -7,31 +7,34 @@ const Explore = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="explore-wrapper">
+        <>
             <TopNav />
+            <div className="explore-wrapper">
+                <div className="explore-header-wrapper">
+                    <div className="explore-header">
+                        Morgan State University
+                    </div>
+                </div>
 
-            <div className="explore-header">
-                Morgan State University
-            </div>
-
-            <div className="explore-sections">
-                <div className="explore-section" onClick={() => navigate('/housing')}>
-                    Explore Morgan - Housing
-                </div>
-                <div className="explore-section" onClick={() => navigate('/groups')}>
-                    Explore Morgan - Groups
-                </div>
-                <div className="explore-section" onClick={() => navigate('/events')}>
-                    Social Events
-                </div>
-                <div className="explore-section" onClick={() => navigate('/map')}>
-                    Campus Map
-                </div>
-                <div className="explore-section" onClick={() => navigate('/settings')}>
-                    Settings
+                <div className="explore-sections">
+                    <div className="explore-section" onClick={() => navigate('/housing')}>
+                        Housing
+                    </div>
+                    <div className="explore-section" onClick={() => navigate('/groups')}>
+                        Groups
+                    </div>
+                    <div className="explore-section" onClick={() => navigate('/events')}>
+                        Social Events
+                    </div>
+                    <div className="explore-section" onClick={() => navigate('/map')}>
+                        Campus Map
+                    </div>
+                    <div className="explore-section" onClick={() => navigate('/settings')}>
+                        Settings
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

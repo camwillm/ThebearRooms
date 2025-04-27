@@ -1,45 +1,38 @@
 .explore-wrapper {
-    width: 100%;
     min-height: 100vh;
-    background: #f0f2f5;
-    padding-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: auto;
+    background-color: #f5f7fa;
+    margin-top: 50px;
 }
 
 .explore-header {
-    font-size: 2rem;
+    margin-top: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: 3rem;
     color: #1e3a8a;
     text-align: center;
 }
 
 .explore-sections {
-    width: 90%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .explore-section {
-    background: white;
+    background-color: white;
     color: #1e3a8a;
-    padding: 1.5rem;
-    border-radius: 12px;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
     text-align: center;
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.2rem;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease;
+}
 
-    &:hover {
-        background-color: #1e3a8a;
-        color: white;
-        transform: translateY(-3px);
-    }
+.explore-section:hover {
+    transform: scale(1.05);
 }

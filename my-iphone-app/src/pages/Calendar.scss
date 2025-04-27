@@ -1,0 +1,123 @@
+.calendar-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #1e3a8a, #3b82f6, #93c5fd);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.calendar-title {
+    margin-top: 4rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.calendar-container {
+    background-color: rgb(3, 36, 87);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 2rem;
+    width: 95%;
+    max-width: 600px;
+}
+
+.calendar-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.header-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.day-header {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.chore-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.chore-cell {
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.chore-cell.student1 {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.chore-cell.student2 {
+    background-color: #f47c20;
+    color: white;
+}
+
+.legend {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.dot.student1 {
+    background-color: #3b82f6;
+}
+
+.dot.student2 {
+    background-color: #f47c20;
+}
+
+.chore-legend {
+    margin-top: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.legend-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.chore-legend ul {
+    list-style: none;
+    padding: 0;
+}
+
+.chore-legend li {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+}

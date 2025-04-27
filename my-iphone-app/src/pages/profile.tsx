@@ -10,7 +10,7 @@ const Profile = () => {
         preference: "",
         classification: "",
         homeState: "",
-        distancePreference: "",
+        Commuting: "",
         description: "",
         interests: [] as string[],
     });
@@ -61,8 +61,8 @@ const Profile = () => {
                     <p>{profileData.homeState || "Not provided"}</p>
                 </div>
                 <div className="info-card">
-                    <label>Distance Preference</label>
-                    <p>{profileData.distancePreference || "Not provided"}</p>
+                    <label>Commuting</label>
+                    <p>{profileData.Commuting || "Not provided"}</p>
                 </div>
                 <div className="info-card">
                     <label>Interests</label>
