@@ -1,14 +1,14 @@
-import { Routes, Route } from 'react-router-dom';
-import ScreenWrapper from './components/ScreenWrapper';
-import Home from './pages/Home';
-import BearRoom from './pages/BearRoom';
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import ScreenWrapper from "./components/ScreenWrapper";
 
 function App() {
   return (
     <ScreenWrapper>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/bear-room" element={<BearRoom />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </ScreenWrapper>
   );

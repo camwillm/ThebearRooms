@@ -1,7 +1,6 @@
-import React from 'react';
-import { DeviceFrameset } from 'react-device-frameset';
+import { DeviceFrameset } from "react-device-frameset";
 import 'react-device-frameset/styles/marvel-devices.min.css';
-import './ScreenWrapper.scss';
+import "./ScreenWrapper.scss";
 
 interface ScreenWrapperProps {
     children: React.ReactNode;
