@@ -1,0 +1,104 @@
+.settings-wrapper {
+    min-height: 100vh;
+    background: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-header {
+    padding: 1rem 1.25rem 0.5rem;
+    h2 { font-size: 1.3rem; color: #1e3a8a; margin: 0; }
+}
+
+.settings-list {
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.settings-section {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+    h3 {
+        font-size: 0.78rem;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 0.75rem 1rem 0.4rem;
+        margin: 0;
+    }
+}
+
+.settings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+    color: #222;
+
+    &.clickable {
+        cursor: pointer;
+        &:hover { background: #f8f8f8; }
+    }
+}
+
+.chevron {
+    font-size: 1.3rem;
+    color: #bbb;
+}
+
+/* Toggle switch */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+
+    input { opacity: 0; width: 0; height: 0; }
+
+    .slider {
+        position: absolute;
+        inset: 0;
+        background: #ccc;
+        border-radius: 24px;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            left: 3px;
+            bottom: 3px;
+            background: white;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+    }
+
+    input:checked + .slider { background: #1e3a8a; }
+    input:checked + .slider::before { transform: translateX(20px); }
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 0.9rem;
+    background: white;
+    color: #e53e3e;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: background 0.2s;
+
+    &:hover { background: #fff5f5; }
+}

@@ -1,0 +1,74 @@
+.map-wrapper {
+    min-height: 100vh;
+    background: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-header {
+    padding: 1rem 1.25rem 0.25rem;
+    h2 {
+        font-size: 1.3rem;
+        color: #1e3a8a;
+        margin: 0;
+    }
+    p {
+        font-size: 0.85rem;
+        color: #666;
+        margin: 0.2rem 0 0;
+    }
+}
+
+.map-filters {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+}
+
+.filter-chip {
+    white-space: nowrap;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &.active {
+        background: #1e3a8a;
+        color: white;
+        border-color: #1e3a8a;
+    }
+}
+
+.map-legend {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 1rem 0.5rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    color: white;
+}
+.legend-academic   { background: #2563eb; }
+.legend-dining     { background: #ea580c; }
+.legend-housing    { background: #16a34a; }
+.legend-safety     { background: #dc2626; }
+.legend-recreation { background: #7c3aed; }
+
+.map-container {
+    height: 480px;
+    margin: 0 0.75rem 0.75rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
